@@ -4,10 +4,10 @@ from .utils import csv_to_list, rates_to_dic
 
 class PerfectMoney(Links):
     
-    def __init__(self, account_id, password):
+    def __init__(self, account_id, password, Proxy):
         super().__init__(account_id, password)
-        self.req= Requests()
-        self._error= None 
+        self.req= Requests(proxy=Proxy)
+        self._error= None
         self._address_prefix= {
             'U': 'USD',
             'E': 'EUR',
